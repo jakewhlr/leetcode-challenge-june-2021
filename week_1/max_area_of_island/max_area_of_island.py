@@ -35,3 +35,7 @@ class Solution:
                 else:
                     self.grid_seen[row][col] = True
         return self.max_island
+
+    def maxAreaOfIsland(self, grid: List[List[int]]):
+        """rename function for leetcode"""
+        return self.max_area_of_island(grid)
