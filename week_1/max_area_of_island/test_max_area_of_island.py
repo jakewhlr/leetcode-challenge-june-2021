@@ -17,11 +17,11 @@ class TestSolution(unittest.TestCase):
             [0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
             [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
         ]
-        self.assertEqual(self.solution.max_area_of_island(grid), 6)
+        self.assertEqual(self.solution.maxAreaOfIsland(grid), 6)
 
     def test_case_02(self):
         grid = [[1, 1, 0, 1, 1], [1, 0, 0, 0, 0], [0, 0, 0, 0, 1], [1, 1, 0, 1, 1]]
-        self.assertEqual(self.solution.max_area_of_island(grid), 3)
+        self.assertEqual(self.solution.maxAreaOfIsland(grid), 3)
 
     def test_full_grid(self):
         grid = [
@@ -36,7 +36,7 @@ class TestSolution(unittest.TestCase):
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
             [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
         ]
-        self.assertEqual(self.solution.max_area_of_island(grid), 100)
+        self.assertEqual(self.solution.maxAreaOfIsland(grid), 100)
 
     def test_empty_grid(self):
         grid = [
@@ -46,4 +46,4 @@ class TestSolution(unittest.TestCase):
             [0, 0, 0, 0, 0],
             [0, 0, 0, 0, 0],
         ]
-        self.assertEqual(self.solution.max_area_of_island(grid), 0)
+        self.assertEqual(self.solution.maxAreaOfIsland(grid), 0)
