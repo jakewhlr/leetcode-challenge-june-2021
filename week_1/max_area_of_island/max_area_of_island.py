@@ -17,14 +17,15 @@ class Solution:
         if self.grid_seen[row][col]:
             return 0
         self.grid_seen[row][col] = True
-        up = self._max_area_helper(grid, row - 1, col) if (row - 1) >= 0 else 0
-        left = self._max_area_helper(grid, row, col - 1) if (col - 1) <= 0 else 0
-        down = self._max_area_helper(grid, row + 1, col) if (row + 1) < len(grid) else 0
-        right = (
-            self._max_area_helper(grid, row, col + 1)
-            if (col + 1) < len(grid[row])
-            else 0
-        )
+        up = left = down = right = 0
+        if row - 1 >= 0:
+            up = self._max_area_helper(grid, row - 1, col)
+        if (col - 1) >= 0:
+            left = self._max_area_helper(grid, row, col - 1)
+        if (row + 1) < len(grid):
+            down = self._max_area_helper(grid, row + 1, col)
+        if (col + 1) < len(grid[row]):
+            right = self._max_area_helper(grid, row, col + 1)
         return 1 + up + left + down + right
 
     def max_area_of_island(self, grid: List[List[int]]) -> int:
