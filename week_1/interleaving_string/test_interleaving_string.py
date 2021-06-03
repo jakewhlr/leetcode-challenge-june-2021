@@ -46,7 +46,7 @@ class TestSolution(unittest.TestCase):
         s1 = "hello"
         s2 = "world"
         s3 = "helloworld"
-        self.assertEqual(self.solution.isInterleave(s1, s2, s3), False)
+        self.assertEqual(self.solution.isInterleave(s1, s2, s3), True)
 
     def test_longstring(self):
         s1 = "hello"
@@ -58,4 +58,16 @@ class TestSolution(unittest.TestCase):
         s1 = "aabcc"
         s2 = "dbbca"
         s3 = "aadbbcbcac"
+        self.assertEqual(self.solution.isInterleave(s1, s2, s3), True)
+
+    def test_case_01_flipped(self):
+        s1 = "dbbca"
+        s2 = "aabcc"
+        s3 = "aadbbcbcac"
+        self.assertEqual(self.solution.isInterleave(s1, s2, s3), True)
+
+    def test_case_02(self):
+        s1 = "bbbbbabbbbabaababaaaabbababbaaabbabbaaabaaaaababbbababbbbbabbbbababbabaabababbbaabababababbbaaababaa"
+        s2 = "babaaaabbababbbabbbbaabaabbaabbbbaabaaabaababaaaabaaabbaaabaaaabaabaabbbbbbbbbbbabaaabbababbabbabaab"
+        s3 = "babbbabbbaaabbababbbbababaabbabaabaaabbbbabbbaaabbbaaaaabbbbaabbaaabababbaaaaaabababbababaababbababbbababbbbaaaabaabbabbaaaaabbabbaaaabbbaabaaabaababaababbaaabbbbbabbbbaabbabaabbbbabaaabbababbabbabbab"
         self.assertEqual(self.solution.isInterleave(s1, s2, s3), True)
